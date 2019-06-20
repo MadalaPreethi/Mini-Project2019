@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>Student's Marks </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="home.css"/>
+    </head>
+    <body>
+       <nav class="navbar-navbar bg-dark navbar-dark">
+          <a class="navbar-brand" style="color:white" href="#">Students Marks</a> 
+          <button style="float:right"class="navbar-toggler" data-toggle="collapse" data-target="#navlist">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navlist" class="collapse navbar-collapse">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="admin.html">Admin</a>
+                  </li>
+
+              </ul>
+          </div> 
+        </nav>
+        <section>
+            <div class="jumbotron" style="color:black">
+                <h3>Some rules to make your search easy..!</h3>
+                <h4>
+                    College Id:-
+                </h4>
+                <p>
+                   1)Student's of CVR COLLEGE OF ENGINEERING , please enter your college id  that is assigned to you by your college.
+                </p>
+                <h4>
+                    Exam Id:-
+                </h4>
+                <p>
+                    Exam id is kind of a new thing but let me make it easy for you all to understand.
+                    <ol>
+                        <li>
+                           Exam id makes it easy for us to understand the exam results which you are looking for.
+                        </li>
+                        <li>
+                            Here we understand the exam type in the format x-y-z
+                        </li>
+                        <li>
+                            x: it tells us the year of the B.tech course
+                        </li>
+                        <li>
+                            y: tells the semester you are in.There are only 2 numbers.
+                            <ol>
+                                <li>
+                                    1:first sem of the corresponding B.Tech year
+                                </li>
+                                <li>
+                                    2:second sem of the corresponding B.Tech year
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            z:tells the mid or sem exam you are talking about.There are 3 no.
+                            <ol>
+                                <li>
+                                    1: First mid
+                                </li>
+                                <li>
+                                    2: Second mid
+                                </li>
+                                <li>
+                                    3: Semester exam
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </p>
+            </div>
+        </section>
+           <section>
+               <form>
+                   <div class="form-group">
+                       <label>Roll Number:</label>
+                       <input type="text" class="form-control" id="roll" placeholder="Enter your college id" required/>
+                        <div class="valid-feedback">Valid</div>
+                        <div class="invalid-feedback">*</div>
+                   </div>
+                   <div class="form-group">
+                        <label>Exam no:</label>
+                        <input type="text" class="form-control" id="exam" placeholder="Enter the required exam id" required/><br/>
+                      <button type="submit" class="btn btn-success">Search</button>
+                </form>
+           </section>
+           <table class="table table-hover" id="marktb">
+               <tr>
+                   <th>S.no</th>
+                   <th>Subject</th>
+                   <th>Points</th>
+                   <th>Grade</th>
+               </tr>
+           </table>
+            <script>
+                var database=firebase.database();
+                var r=document.getElementById("roll").value;
+                var e=document.getElementById("exam").value;
+                database.ref().child(r).on(e,function (snapshot){
+                    if(snapshot.exists()){
+                        var content ='';
+                        snapshot.forEach(function (data){
+                            var val=data.val();
+                            content +='<tr>';
+                            content +='<td>' + val.Sno + '</td>';
+                            content +='<td>' + val.Subject + '</td>';
+                            content +='<td>' + val.Points + '</td>';
+                            content +='<td>' + val.Grade + '</td>';
+                        });
+                        $('#marktb').append(content);
+                    }
+                });
+            </script>
+
+                   <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+    </body>
+</html>

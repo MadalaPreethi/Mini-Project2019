@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Student's Marks </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="home.css"/>
+       
+
+
+
+    </head>
+    <body>
+        <nav class="navbar-navbar bg-dark navbar-dark">
+          <a class="navbar-brand" style="color:white" href="#">Students Marks</a>
+          <button style="float:right"class="navbar-toggler" data-toggle="collapse" data-target="#navlist">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navlist" class="collapse navbar-collapse">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#register" data-toggle="collapse">Register</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#login" data-toggle="collapse">Login</a>
+                  </li>
+              </ul>
+          </div> 
+        </nav>
+           <section id="register" class="collapse">
+               <form>
+                   <!--firstname-->
+                   <div class="form-group">
+                       <label>First Name:</label>
+                       <input type="text" class="form-control" id="fname" placeholder="Enter first name" required/>
+                   </div>
+                   <div class="form-group">
+                       <!--lastname-->
+                        <label>Last Name:</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Enter last name" required/>
+                    </div>
+                    <div class="form-group">
+                        <!--email-->
+                            <label>Email id:</label>
+                            <input type="text" class="form-control" id="ID" placeholder="xxxx@gmail.com" required/>
+                    </div>
+                    <div class="form-group">
+                        <!--password-->
+                        <label>password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="*********" required/>
+                    </div>
+                    <br/>
+                      <button class="btn btn-warning" onclick="Register(fname.value,lname.value,ID.value,pwd.value)">Sign-in</button>
+                </form>
+           </section>
+           <section id="login"class="collapse">
+               <form>
+                   <div class="form-group">
+                       <label>First name:</label>
+                       <input type="text" class="form-control" id="lfname" placeholder="Enter your first name" required/>
+                   </div>
+                   <div class="form-group">
+                    <label>password:</label>
+                    <input type="password" class="form-control" id="pass" placeholder="********" required/>
+            </div>
+
+                   <button  class="btn btn-primary" onclick="check(lfname.value,pass.value)">Login</button>
+               </form>
+           </section>
+           <script src="admin.js"></script>
+                   <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDZvqNQT6rdf2l01EsEIzqHTIWJB3zxGxI",
+    authDomain: "mini-f82de.firebaseapp.com",
+    databaseURL: "https://mini-f82de.firebaseio.com",
+    projectId: "mini-f82de",
+    storageBucket: "mini-f82de.appspot.com",
+    messagingSenderId: "831810058583",
+    appId: "1:831810058583:web:0dff1039873565a5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+    </body>
+    </body>
+</html>

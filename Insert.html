@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+         <link rel="stylesheet" href="Modify.css">  
+    </head>
+    <body>
+            <nav class="navbar-navbar bg-dark navbar-dark">
+                    <a class="navbar-brand" style="color:white" href="#">Students Marks</a> 
+            </nav>
+            <div>
+                <form>
+                    <table>
+                        <tr>
+                            <td>
+                    <label>
+                    Roll No.
+                    </label></td>
+                   <td> <input type="text" id="r1" required placeholder="16B81A03D2"></td></tr>
+                   <tr>
+                       <td>
+                    <label>Exam Id</label></td>
+                    <td><input type="text" id="e1" required placeholder="year-sem no-exam"></td></tr>
+                    <tr><td>
+                    <label> Subject </label></td>
+                    <td><input type="text" id="s1" placeholder="Enter subject name"required></td>></tr>
+                    <tr><td>
+                            <label>Marks</label>
+                    </td>
+                    <td>
+                            <input type="number" id="m1" placeholder="Enter marks obtained" required>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td>
+                                <label>Grade</label>
+                        </td>
+                        <td>
+                                <input type="text" id="g1" required placeholder="Enter the grade obtained">
+
+                        </td>
+                    </tr>
+                    
+                   
+                    </table><br/>
+                    <br/>
+                    <button  style="width: 120px;height:50px;color: orange"onclick="addData(r1.value,e1.value,s1.value,m1.value,g1.value)" class="btn btn-success">Insert
+                    </button>
+                </form>
+            </div>
+            <script src="Insert.js"></script>
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDZvqNQT6rdf2l01EsEIzqHTIWJB3zxGxI",
+    authDomain: "mini-f82de.firebaseapp.com",
+    databaseURL: "https://mini-f82de.firebaseio.com",
+    projectId: "mini-f82de",
+    storageBucket: "mini-f82de.appspot.com",
+    messagingSenderId: "831810058583",
+    appId: "1:831810058583:web:0dff1039873565a5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+            
+                   <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>

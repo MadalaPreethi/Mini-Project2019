@@ -1,0 +1,15 @@
+form{
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    width:250px;
+    height:400px;
+    color: lavenderblush
+}
+#jumbotron{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+body{
+    background-color: black
+}
